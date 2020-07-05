@@ -635,7 +635,9 @@ class Regrtest:
         except SystemExit as exc:
             # bpo-38203: Python can hang at exit in Py_Finalize(), especially
             # on threading._shutdown() call: put a timeout
-            faulthandler.dump_traceback_later(EXIT_TIMEOUT, exit=True)
+
+            # Skipping, pyodide doesn't support threading.
+            # faulthandler.dump_traceback_later(EXIT_TIMEOUT, exit=True)
 
             sys.exit(exc.code)
 

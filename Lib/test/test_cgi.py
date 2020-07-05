@@ -188,6 +188,7 @@ Content-Length: 3
                         self.assertEqual(fs.getvalue(key), expect_val[0])
 
     def test_log(self):
+        raise unittest.SkipTest('known pyodide failure')
         cgi.log("Testing")
 
         cgi.logfp = StringIO()

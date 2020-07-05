@@ -9,6 +9,7 @@ import os.path
 import subprocess
 import py_compile
 import zipfile
+import unittest
 
 from importlib.util import source_from_cache
 from test.support import make_legacy_pyc, strip_python_stderr
@@ -34,6 +35,8 @@ def interpreter_requires_environment():
     situation.  PYTHONPATH or PYTHONUSERSITE are other common environment
     variables that might impact whether or not the interpreter can start.
     """
+    raise unittest.SkipTest('no subprocess')
+
     global __cached_interp_requires_environment
     if __cached_interp_requires_environment is None:
         # If PYTHONHOME is set, assume that we need it
@@ -172,6 +175,8 @@ def spawn_python(*args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, **kw):
     kw is extra keyword args to pass to subprocess.Popen. Returns a Popen
     object.
     """
+    raise unittest.SkipTest("no subprocess")
+
     cmd_line = [sys.executable]
     if not interpreter_requires_environment():
         cmd_line.append('-E')

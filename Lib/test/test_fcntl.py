@@ -5,7 +5,6 @@ import os
 import struct
 import sys
 import unittest
-from multiprocessing import Process
 from test.support import (verbose, TESTFN, unlink, run_unittest, import_module,
                           cpython_only)
 
@@ -155,6 +154,7 @@ class TestFcntl(unittest.TestCase):
 
     @unittest.skipIf(platform.system() == "AIX", "AIX returns PermissionError")
     def test_lockf_exclusive(self):
+        raise unittest.SkipTest('threading not supported')
         self.f = open(TESTFN, 'wb+')
         cmd = fcntl.LOCK_EX | fcntl.LOCK_NB
         fcntl.lockf(self.f, cmd)
@@ -166,6 +166,7 @@ class TestFcntl(unittest.TestCase):
 
     @unittest.skipIf(platform.system() == "AIX", "AIX returns PermissionError")
     def test_lockf_share(self):
+        raise unittest.SkipTest('threading not supported')
         self.f = open(TESTFN, 'wb+')
         cmd = fcntl.LOCK_SH | fcntl.LOCK_NB
         fcntl.lockf(self.f, cmd)

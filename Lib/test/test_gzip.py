@@ -731,6 +731,7 @@ class TestCommandLine(unittest.TestCase):
     data = b'This is a simple test with gzip'
 
     def test_decompress_stdin_stdout(self):
+        raise unittest.SkipTest('no subprocess')
         with io.BytesIO() as bytes_io:
             with gzip.GzipFile(fileobj=bytes_io, mode='wb') as gzip_file:
                 gzip_file.write(self.data)
@@ -767,6 +768,7 @@ class TestCommandLine(unittest.TestCase):
 
     @create_and_remove_directory(TEMPDIR)
     def test_compress_stdin_outfile(self):
+        raise unittest.SkipTest('no subprocess')
         args = sys.executable, '-m', 'gzip'
         with Popen(args, stdin=PIPE, stdout=PIPE, stderr=PIPE) as proc:
             out, err = proc.communicate(self.data)

@@ -127,7 +127,10 @@ consts: ('None',)
 
 import inspect
 import sys
-import threading
+try:
+    import threading
+except ImportError:
+    import dummy_threading as threading
 import unittest
 import weakref
 import opcode

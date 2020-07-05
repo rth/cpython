@@ -11,7 +11,10 @@ import shutil
 import subprocess
 import stat
 import sys
-import threading
+try:
+    import threading
+except ImportError:
+    import dummy_threading as threading
 import time
 import unittest
 import unittest.mock as mock

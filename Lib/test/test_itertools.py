@@ -11,7 +11,7 @@ import pickle
 from functools import reduce
 import sys
 import struct
-import threading
+import dummy_threading as threading
 maxsize = support.MAX_Py_ssize_t
 minsize = -maxsize-1
 
@@ -1511,6 +1511,7 @@ class TestBasicOps(unittest.TestCase):
             next(a)
 
     def test_tee_concurrent(self):
+        raise unittest.SkipTest('threading not supported')
         start = threading.Event()
         finish = threading.Event()
         class I:

@@ -1337,6 +1337,13 @@ error:
     Py_DECREF(iterator);
     return 0;
 }
+#else
+int
+_Py_Sigset_Converter(PyObject *obj, void *addr)
+{
+    PyErr_SetFromErrno(PyExc_OSError);
+    return 0;
+}
 #endif /* HAVE_SIGSET_T */
 
 #ifdef MS_WINDOWS
@@ -5412,6 +5419,7 @@ parse_posix_spawn_flags(const char *func_name, PyObject *setpgroup,
         }
         all_flags |= POSIX_SPAWN_SETSIGDEF;
     }
+
 
     if (scheduler) {
 #ifdef POSIX_SPAWN_SETSCHEDULER

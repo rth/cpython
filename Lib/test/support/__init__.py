@@ -952,6 +952,8 @@ if os.name == 'nt':
                   'Unicode filename tests may not be effective'
                   % (TESTFN_UNENCODABLE, TESTFN_ENCODING))
             TESTFN_UNENCODABLE = None
+elif sys.platform == 'emscripten':
+    pass
 # Mac OS X denies unencodable filenames (invalid utf-8)
 elif sys.platform != 'darwin':
     try:

@@ -154,6 +154,8 @@ typedef int socklen_t;
 extern "C" {
 #endif
 
+#undef AF_VSOCK
+
 /* Python module and C API name */
 #define PySocket_MODULE_NAME    "_socket"
 #define PySocket_CAPI_NAME      "CAPI"

@@ -24,6 +24,10 @@
 #include "module.h"
 #include "connection.h"
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 int pysqlite_step(sqlite3_stmt* statement, pysqlite_Connection* connection)
 {
     int rc;

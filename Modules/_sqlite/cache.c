@@ -24,6 +24,10 @@
 #include "cache.h"
 #include <limits.h>
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 /* only used internally */
 pysqlite_Node* pysqlite_new_node(PyObject* key, PyObject* data)
 {

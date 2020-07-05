@@ -24,6 +24,10 @@
 #include "row.h"
 #include "cursor.h"
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 void pysqlite_row_dealloc(pysqlite_Row* self)
 {
     Py_XDECREF(self->data);

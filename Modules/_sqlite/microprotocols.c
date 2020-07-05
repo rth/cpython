@@ -30,6 +30,10 @@
 #include "microprotocols.h"
 #include "prepare_protocol.h"
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 
 /** the adapters registry **/
 

@@ -23,6 +23,10 @@
 
 #include "prepare_protocol.h"
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 int pysqlite_prepare_protocol_init(pysqlite_PrepareProtocol* self, PyObject* args, PyObject* kwargs)
 {
     return 0;

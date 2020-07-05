@@ -25,6 +25,10 @@
 #include "module.h"
 #include "util.h"
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 PyObject* pysqlite_cursor_iternext(pysqlite_Cursor* self);
 
 static const char errmsg_fetch_across_rollback[] = "Cursor needed to be reset because of commit/rollback and can no longer be fetched from.";

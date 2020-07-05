@@ -28,6 +28,10 @@
 #include "prepare_protocol.h"
 #include "util.h"
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 /* prototypes */
 static int pysqlite_check_remaining_sql(const char* tail);
 

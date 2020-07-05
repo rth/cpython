@@ -45,6 +45,10 @@
 #define HAVE_BACKUP_API
 #endif
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 _Py_IDENTIFIER(cursor);
 
 static const char * const begin_statements[] = {

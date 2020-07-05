@@ -33,6 +33,10 @@
 #define HAVE_SHARED_CACHE
 #endif
 
+#ifndef MODULE_NAME
+#define MODULE_NAME "sqlite"
+#endif
+
 /* static objects at module-level */
 
 PyObject *pysqlite_Error = NULL;
